@@ -1,0 +1,29 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h1>Create Party</h1>
+        <form action="{{ route('parties.store') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="name" id="name" required
+                    value="{{ old('name') }}">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone" id="phone" value="{{ old('phone') }}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" name="address" id="address" value="{{ old('address') }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a href="{{ route('parties.index') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+@endsection
