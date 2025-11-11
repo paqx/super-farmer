@@ -20,7 +20,10 @@
                         <td>{{ $animalType->id }}</td>
                         <td>{{ $animalType->type }}</td>
                         <td>
-                            <a href="{{ route('animal-types.show', $animalType->id) }}" class="btn btn-info btn-sm">View</a>
+                            @include('partials.crud_buttons', [
+                                'resourceName' => 'animal-types',
+                                'model' => $animalType,
+                            ])
                         </td>
                     </tr>
                 @empty

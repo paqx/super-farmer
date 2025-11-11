@@ -32,7 +32,10 @@
                         <td>{{ $animal->breeder ? $animal->breeder->name : '-' }}</td>
                         <td>{{ $animal->owner ? $animal->owner->name : '-' }}</td>
                         <td>
-                            <a href="{{ route('animals.show', $animal->id) }}" class="btn btn-info btn-sm">View</a>
+                            @include('partials.crud_buttons', [
+                                'resourceName' => 'animals',
+                                'model' => $animal,
+                            ])
                         </td>
                     </tr>
                 @empty

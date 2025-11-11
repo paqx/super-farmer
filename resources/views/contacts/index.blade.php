@@ -30,14 +30,10 @@
                         <td>{{ $contact->email ?? '-' }}</td>
                         <td>{{ $contact->address ?? '-' }}</td>
                         <td>
-                            <a href="{{ route('contacts.show', $contact->id) }}" class="btn btn-sm btn-info">Show</a>
-                            <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                            <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Are you sure?')">Delete</button>
-                            </form>
+                            @include('partials.crud_buttons', [
+                                'resourceName' => 'contacts',
+                                'model' => $contact,
+                            ])
                         </td>
                     </tr>
                 @empty
