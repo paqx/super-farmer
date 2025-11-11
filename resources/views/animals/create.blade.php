@@ -96,9 +96,9 @@
                 <label for="breeder_id" class="form-label">Breeder</label>
                 <select name="breeder_id" id="breeder_id" class="form-select">
                     <option value="">-- None --</option>
-                    @foreach ($parties as $party)
-                        <option value="{{ $party->id }}" {{ old('breeder_id') == $party->id ? 'selected' : '' }}>
-                            {{ $party->name }}
+                    @foreach ($contacts as $contact)
+                        <option value="{{ $contact->id }}" {{ old('breeder_id') == $contact->id ? 'selected' : '' }}>
+                            {{ $contact->name }}
                         </option>
                     @endforeach
                 </select>
@@ -107,9 +107,9 @@
                 <label for="owner_id" class="form-label">Owner</label>
                 <select name="owner_id" id="owner_id" class="form-select">
                     <option value="">-- None --</option>
-                    @foreach ($parties as $party)
-                        <option value="{{ $party->id }}" {{ old('owner_id') == $party->id ? 'selected' : '' }}>
-                            {{ $party->name }}
+                    @foreach ($contacts as $contact)
+                        <option value="{{ $contact->id }}" {{ old('owner_id') == $contact->id ? 'selected' : '' }}>
+                            {{ $contact->name }}
                         </option>
                     @endforeach
                 </select>

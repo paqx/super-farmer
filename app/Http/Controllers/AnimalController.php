@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animal;
 use App\Models\AnimalType;
-use App\Models\Party;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -26,12 +26,12 @@ class AnimalController extends Controller
     {
         $animalTypes = AnimalType::all();
         $animals = Animal::all();
-        $parties = Party::all();
+        $contacts = Contact::all();
 
         return view('animals.create', compact(
             'animalTypes',
             'animals',
-            'parties'
+            'contacts'
         ));
     }
 
@@ -46,12 +46,12 @@ class AnimalController extends Controller
             'date_of_death' => 'nullable|date',
             'maternal_id' => 'nullable|exists:animals,id',
             'paternal_id' => 'nullable|exists:animals,id',
-            'breeder_id' => 'nullable|exists:parties,id',
-            'owner_id' => 'nullable|exists:parties,id',
+            'breeder_id' => 'nullable|exists:contacts,id',
+            'owner_id' => 'nullable|exists:contacts,id',
             'num_of_siblings_at_birth' => 'nullable|integer|min:0|max:255',
             'birth_weight' => 'nullable|numeric',
             'color_pattern' => 'nullable|string|max:255',
-            'photo' => 'nullable|image|max:5120', // 5MB max, adjust as needed
+            'photo' => 'nullable|image|max:5120',
             'breed_composition' => 'required|json',
             'attributes' => 'nullable|json',
         ]);

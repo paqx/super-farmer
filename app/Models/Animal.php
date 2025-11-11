@@ -40,12 +40,12 @@ class Animal extends Model
 
     public function breeder()
     {
-        return $this->belongsTo(Party::class, 'breeder_id');
+        return $this->belongsTo(Contact::class, 'breeder_id');
     }
 
     public function owner()
     {
-        return $this->belongsTo(Party::class, 'owner_id');
+        return $this->belongsTo(Contact::class, 'owner_id');
     }
 
     /**

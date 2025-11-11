@@ -54,14 +54,14 @@
         </div>
         <div class="mb-3"><strong>Breeder:</strong>
             @if ($animal->breeder)
-                <a href="{{ route('parties.show', $animal->breeder->id) }}">{{ $animal->breeder->name }}</a>
+                <a href="{{ route('contacts.show', $animal->breeder->id) }}">{{ $animal->breeder->name }}</a>
             @else
                 -
             @endif
         </div>
         <div class="mb-3"><strong>Owner:</strong>
             @if ($animal->owner)
-                <a href="{{ route('parties.show', $animal->owner->id) }}">{{ $animal->owner->name }}</a>
+                <a href="{{ route('contacts.show', $animal->owner->id) }}">{{ $animal->owner->name }}</a>
             @else
                 -
             @endif

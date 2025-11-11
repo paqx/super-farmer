@@ -33,12 +33,12 @@ return new class extends Migration
                 ->restrictOnDelete();
             $table->foreignId('breeder_id')
                 ->nullable()
-                ->constrained('parties')
+                ->constrained('contacts')
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
             $table->foreignId('owner_id')
                 ->nullable()
-                ->constrained('parties')
+                ->constrained('contacts')
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
 

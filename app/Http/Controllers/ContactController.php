@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Party;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class PartyController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $parties = Party::paginate(10);
-        return view('parties.index', compact('parties'));
+        $contacts = Contact::paginate(10);
+        return view('contacts.index', compact('contacts'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PartyController extends Controller
      */
     public function create()
     {
-        return view('parties.create');
+        return view('contacts.create');
     }
 
     /**
@@ -36,8 +36,8 @@ class PartyController extends Controller
             'address' => 'nullable|string|max:255',
         ]);
 
-        Party::create($request->only('name', 'phone', 'email', 'address'));
-        return redirect()->route('parties.index');
+        Contact::create($request->only('name', 'phone', 'email', 'address'));
+        return redirect()->route('contacts.index');
     }
 
     /**
@@ -45,8 +45,8 @@ class PartyController extends Controller
      */
     public function show(string $id)
     {
-        $party = Party::findOrFail($id);
-        return view('parties.show', compact('party'));
+        $contact = Contact::findOrFail($id);
+        return view('contacts.show', compact('contact'));
     }
 
     /**

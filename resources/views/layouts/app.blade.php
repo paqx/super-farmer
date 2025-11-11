@@ -23,7 +23,7 @@
                         <a class="nav-link" href="{{ route('animal-types.index') }}">Animal Types</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('parties.index') }}">Parties</a>
+                        <a class="nav-link" href="{{ route('contacts.index') }}">Contacts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('animals.index') }}">Animals</a>
